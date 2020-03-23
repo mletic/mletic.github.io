@@ -340,7 +340,7 @@ function toggleLayer(clickedLayer) {
 }
 
 function initMap() {
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZXhhbXBsZXMiLCJhIjoiY2p0MG01MXRqMW45cjQzb2R6b2ptc3J4MSJ9.zA2W0IkI0c6KaAhJfk9bWg';
+    mapboxgl.accessToken = 'pk.eyJ1IjoibWFsbGFjayIsImEiOiJjazg0ZWdsbGYwb2ZvM2txdDNlbHc2ZjY5In0.4OQITVSJ7sknTC712IAocw';
     map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/light-v10',
