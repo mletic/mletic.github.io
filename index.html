@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>COVID-19 Outbreak</title>
+    <meta
+        name="viewport"
+        content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"></script>
+    <link
+        href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css"
+        rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="map"></div>
+    <div id="console">
+        <h1>COVID-19 Outbreak</h1>
+        <p>
+            Data:
+            <a
+                href="https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv"
+                >COVID-19 Confirmed cases per date worldwide</a
+            >
+            from Jan 2019 to Mar 2020
+        </p>
+        <div class="session">
+        <h2>Confirmed cases</h2>
+        <div class="row colors"></div>
+        <div class="row labels">
+            <div class="label">0</div>
+            <div class="label">10</div>
+            <div class="label">100</div>
+            <div class="label">1000</div>
+            <div class="label">5000</div>
+            <div class="label">10000+</div>
+        </div>
+        </div>
+        <div class="radio-group">
+            <input type="checkbox" id="covid-circle" name="layers" value="covid-circle" checked onclick="toggleLayer('covid-circle');">
+            <label for="covid-circle">Circle layer</label><br>
+            <input type="checkbox" id="covid-heat" name="layers" value="covid-heat" onclick="toggleLayer('covid-heat');">
+            <label for="covid-heat">Heatmap layer</label><br>
+        </div>
+        <div id="vis">
+            <button id="play-button">Play</button>
+        </div>
+        <div class="current-date-container">
+            <div class="current-date-label">Date:</div>
+            <div id="current-date-info"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

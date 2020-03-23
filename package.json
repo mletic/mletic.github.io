@@ -1,0 +1,15 @@
+{
+  "name": "corona-viz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "dependencies": {
+    "csv-parser": "^2.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marko Letic",
+  "license": "MIT"
+}
