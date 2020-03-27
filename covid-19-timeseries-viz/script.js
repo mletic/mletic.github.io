@@ -218,57 +218,6 @@ function addHeatmapLayer() {
         },
         'waterway-label'
     );
-         
-        // map.addLayer({
-        //     'id': 'covid-point',
-        //     'type': 'circle',
-        //     'source': 'covid',
-        //     'minzoom': 7,
-        //     'paint': {
-        //     // Size circle radius by earthquake magnitude and zoom level
-        //     'circle-radius': [
-        //     'interpolate',
-        //     ['linear'],
-        //     ['zoom'],
-        //     7,
-        //     ['interpolate', ['linear'], ['get', 'mag'], 1, 1, 6, 4],
-        //     16,
-        //     ['interpolate', ['linear'], ['get', 'mag'], 1, 5, 6, 50]
-        //     ],
-        //     // Color circle by earthquake magnitude
-        //     'circle-color': [
-        //     'interpolate',
-        //     ['linear'],
-        //     ['get', 'confirmed'],
-        //     0,
-        //     'rgba(33,102,172,0)',
-        //     10,
-        //     'rgb(103,169,207)',
-        //     100,
-        //     'rgb(209,229,240)',
-        //     1000,
-        //     'rgb(253,219,199)',
-        //     5000,
-        //     'rgb(239,138,98)',
-        //     10000,
-        //     'rgb(178,24,43)'
-        //     ],
-        //     'circle-stroke-color': 'white',
-        //     'circle-stroke-width': 1,
-        //     // Transition from heatmap to circle layer by zoom level
-        //     'circle-opacity': [
-        //     'interpolate',
-        //     ['linear'],
-        //     ['zoom'],
-        //     7,
-        //     0,
-        //     8,
-        //     1
-        //     ]
-        //     }
-        //     },
-        //     'waterway-label'
-        // );
 }
 
 function addCircleLayer() {
@@ -344,9 +293,8 @@ function initMap() {
     map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/light-v10',
-        //style: 'mapbox://styles/mapbox/dark-v10',
-        //center: [-74.0059, 40.7128],
-        //zoom: 11
+        maxBounds: [ [-180, -85], [180, 85] ],
+        zoom: 2
     });
 
     map.on('load', function() {
@@ -360,10 +308,9 @@ function initMap() {
             });
             startDateString = data.features[0].properties.date;
             endDateString = data.features[data.features.length - 1].properties.date;
-            //console.log(startDateString, endDateString);
 
             addCircleLayer();
-            addHeatmapLayer();
+            //addHeatmapLayer();
             setDateSlider(map, startDateString, endDateString);
         });
     });
